@@ -1033,6 +1033,7 @@
 						}
 					}
 					var tooltipLabels = [],
+						tooltipRangeLabels = [],
 						tooltipColors = [],
 						medianPosition = (function(index) {
 
@@ -1050,6 +1051,7 @@
 								if (dataCollection[dataIndex] && dataCollection[dataIndex].hasValue()){
 									Elements.push(dataCollection[dataIndex]);
 								}
+								tooltipRangeLabels.push( { 'label' : dataset.label } );
 							});
 
 							helpers.each(Elements, function(element) {
@@ -1095,6 +1097,7 @@
 						titleFontSize: this.options.tooltipTitleFontSize,
 						cornerRadius: this.options.tooltipCornerRadius,
 						labels: tooltipLabels,
+                        			rangeLabels: tooltipRangeLabels,
 						legendColors: tooltipColors,
 						legendColorBackground : this.options.multiTooltipKeyBackground,
 						title: ChartElements[0].label,
